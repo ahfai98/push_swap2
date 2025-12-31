@@ -6,7 +6,9 @@ SRC_DIR = src
 INC_DIR = inc
 OBJ_DIR = obj
 NAME = push_swap
-SRC = main.c
+SRC =	main.c cost_utils.c execute_moves.c init_stack.c \
+		operations1.c operations2.c operations3.c operations4.c \
+		parse.c utils.c utils2.c sort_big.c sort_small.c \
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 

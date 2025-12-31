@@ -6,18 +6,25 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 19:35:35 by jyap              #+#    #+#             */
-/*   Updated: 2025/12/31 15:00:33 by jyap             ###   ########.fr       */
+/*   Updated: 2025/12/31 15:16:36 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	sort_two(t_stack *a)
+{
+	if (!a || a->size != 2)
+		return ;
+	if (find_min_node(a) != a->head)
+		sa(a);
+}
 
 //move largest to the bottom first, then swap first two if needed
 void	sort_three(t_stack *a)
 {
 	t_node	*n1;
 	t_node	*n2;
-	t_node	*n3;
 	t_node	*max;
 
 	if (!a || a->size != 3)

@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 19:35:40 by jyap              #+#    #+#             */
-/*   Updated: 2025/12/31 15:01:31 by jyap             ###   ########.fr       */
+/*   Updated: 2025/12/31 15:31:31 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	is_sorted(t_stack *stack)
 {
 	t_node	*tmp;
 
+	if (!stack || !stack->head || stack->size == 1 || stack->size == 0)
+		return (1);
 	tmp = stack->head;
 	while (tmp && tmp->next)
 	{

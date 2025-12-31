@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 19:35:38 by jyap              #+#    #+#             */
-/*   Updated: 2025/12/31 15:00:59 by jyap             ###   ########.fr       */
+/*   Updated: 2025/12/31 15:20:16 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_node	*create_node(int value)
 	return (node);
 }
 
-void	add_note_bottom(t_stack *stack, t_node *node)
+void	add_node_bottom(t_stack *stack, t_node *node)
 {
 	t_node	*tmp;
 
