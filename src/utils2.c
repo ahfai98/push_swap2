@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 19:35:38 by jyap              #+#    #+#             */
-/*   Updated: 2025/12/30 20:07:38 by jyap             ###   ########.fr       */
+/*   Updated: 2025/12/31 15:00:59 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ t_node	*create_node(int value)
 	node->cost_b = 0;
 	node->cheapest = 0;
 	node->next = NULL;
-	node->above_median = 0;
 	return (node);
 }
 
@@ -58,16 +57,38 @@ void	free_stack(t_stack *stack)
 	stack->size = 0;
 }
 
-int	is_sorted(t_stack *stack)
+t_node	*find_min_node(t_stack *s)
 {
-	t_node	*tmp;
+	t_node	*min;
+	t_node	*cur;
 
-	tmp = stack->head;
-	while (tmp && tmp->next)
+	if (!s || !s->head)
+		return (NULL);
+	min = s->head;
+	cur = s->head->next;
+	while (cur)
 	{
-		if (tmp->value > tmp->next->value)
-			return (0);
-		tmp = tmp->next;
+		if (cur->value < min->value)
+			min = cur;
+		cur = cur->next;
 	}
-	return (1);
+	return (min);
+}
+
+t_node	*find_max_node(t_stack *s)
+{
+	t_node	*max;
+	t_node	*cur;
+
+	if (!s || !s->head)
+		return (NULL);
+	max = s->head;
+	cur = s->head->next;
+	while (cur)
+	{
+		if (cur->value > max->value)
+			max = cur;
+		cur = cur->next;
+	}
+	return (max);
 }
